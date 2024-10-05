@@ -8,20 +8,19 @@ public class CoinTossGame {
     static String guessPlayer2;
 
     public static void main(String[] args) {
+        CoinTossGame game= new CoinTossGame();
         Coin coin=new Coin();
-        String namePlayer1=SetName1();
         Player player1=new Player();
-        player1.setName(namePlayer1);
+        player1.setName(game.AskName());
         System.out.println("Welcome "+player1.getName());
 
-        String namePlayer2=SetName2();
         Player player2= new Player();
-        player2.setName(namePlayer2);
+        player2.setName(game.AskName());
         System.out.println("Welcome "+player2.getName());
 
         System.out.println(player1.getName()+" insert here your guess.");
         System.out.println("Please, write in lower case.");
-        guessPlayer1=SetGuess(guessPlayer1, guessPlayer2);
+        guessPlayer1=SetGuess();
         player1.setGuess(guessPlayer1);
 
 
@@ -33,26 +32,22 @@ public class CoinTossGame {
             guessPlayer2=player2.getName();
         } else {
             System.out.println("The guess is invalid");
+            guessPlayer1=SetGuess();
         }
         scanner.close();
         coin.flip();
-        String sideCoin= coin.getSide();
-        CheckFlip(sideCoin, guessPlayer1);
+        coin.getSide();
+        CheckFlip(coin.getSide(), guessPlayer1);
 
     }
 
-    public static String SetName1(){
-        System.out.println("Player 1 Insert here your name:");
+    public static String AskName(){
+        System.out.println("Insert here your name:");
        return scanner.next();
     }
 
-    public static String SetGuess(String guessPlayer1, String guessPlayer2){
+    public static String SetGuess(){
         System.out.println("Will it be head or tail?");
-        return scanner.next();
-    }
-
-    public static String SetName2(){
-        System.out.println("Player 2 insert here your name:");
         return scanner.next();
     }
 
