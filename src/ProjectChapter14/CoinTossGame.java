@@ -11,15 +11,15 @@ public class CoinTossGame {
         CoinTossGame game= new CoinTossGame();
         Coin coin=new Coin();
         Player player1=new Player();
+        Player player2= new Player();
+
         player1.setName(game.AskName());
         System.out.println("Welcome "+player1.getName());
 
-        Player player2= new Player();
         player2.setName(game.AskName());
         System.out.println("Welcome "+player2.getName());
 
         System.out.println(player1.getName()+" insert here your guess.");
-        System.out.println("Please, write in lower case.");
         guessPlayer1=SetGuess();
         player1.setGuess(guessPlayer1);
 
@@ -42,12 +42,12 @@ public class CoinTossGame {
     }
 
     public static String AskName(){
-        System.out.println("Insert here your name:");
+        System.out.println("Hi! Insert here your name:");
        return scanner.next();
     }
 
     public static String SetGuess(){
-        System.out.println("Will it be head or tail?");
+        System.out.println("Will it be head or tail? (Please, write in lower case)");
         return scanner.next();
     }
 
