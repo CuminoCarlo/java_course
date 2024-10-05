@@ -18,7 +18,7 @@ public class CoinTossGame {
         player2.setName(AskName());
         System.out.println("Welcome "+player2.getName());
 
-        System.out.println(player1.getName()+" insert here your guess.");
+        System.out.println(player1.getName()+", insert here your guess.");
         guessPlayer1=SetGuess();
         player1.setGuess(guessPlayer1);
 
@@ -30,7 +30,7 @@ public class CoinTossGame {
             player2.setGuess(coin.getHEAD());
             guessPlayer2=player2.getName();
         } else {
-            System.out.println("The guess is invalid");
+            System.out.println("The guess is invalid. Try again!");
             guessPlayer1=SetGuess();
         }
         scanner.close();
