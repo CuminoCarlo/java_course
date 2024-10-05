@@ -6,6 +6,10 @@ public class Player {
     private String name;
     private String guess;
 
+    public Player(String name){
+        setName(name);
+    }
+
     public String getName() {
         return name;
     }

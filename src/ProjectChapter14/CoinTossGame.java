@@ -8,14 +8,13 @@ public class CoinTossGame {
     static String guessPlayer2;
 
     public static void main(String[] args) {
-        Coin coin=new Coin();
-        Player player1=new Player();
-        Player player2= new Player();
 
-        player1.setName(AskName());
+        Coin coin=new Coin();
+        Player player1=new Player(AskName());
+        Player player2= new Player(AskName());
+
         System.out.println("Welcome "+player1.getName());
 
-        player2.setName(AskName());
         System.out.println("Welcome "+player2.getName());
 
         System.out.println(player1.getName()+", insert here your guess.");
