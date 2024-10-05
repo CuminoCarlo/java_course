@@ -37,7 +37,7 @@ public class CoinTossGame {
         scanner.close();
         coin.flip();
         coin.getSide();
-        CheckFlip(coin.getSide(), guessPlayer1);
+        CheckFlip(coin.getSide(), guessPlayer1, player1, player2);
 
     }
 
@@ -51,11 +51,11 @@ public class CoinTossGame {
         return scanner.next();
     }
 
-    public static void CheckFlip(String side, String guess1){
+    public static void CheckFlip(String side, String guess1, Player p, Player p2){
         if (guess1.equals(side)){
-            System.out.println("The side is "+ side+"! The winner is the player 1!");
+            System.out.println("The side is "+ side+"! "+p.getName()+", you are the winner!");
         } else {
-            System.out.println("The side is "+ side+"! The winner is the player 2!");
+            System.out.println("The side is "+ side+"! "+p2.getName()+", you are the winner!");
         }
     }
 }
