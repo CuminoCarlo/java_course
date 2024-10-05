@@ -8,15 +8,14 @@ public class CoinTossGame {
     static String guessPlayer2;
 
     public static void main(String[] args) {
-        CoinTossGame game= new CoinTossGame();
         Coin coin=new Coin();
         Player player1=new Player();
         Player player2= new Player();
 
-        player1.setName(game.AskName());
+        player1.setName(AskName());
         System.out.println("Welcome "+player1.getName());
 
-        player2.setName(game.AskName());
+        player2.setName(AskName());
         System.out.println("Welcome "+player2.getName());
 
         System.out.println(player1.getName()+" insert here your guess.");
@@ -36,7 +35,6 @@ public class CoinTossGame {
         }
         scanner.close();
         coin.flip();
-        coin.getSide();
         CheckFlip(coin.getSide(), guessPlayer1, player1, player2);
 
     }
