@@ -41,4 +41,10 @@ public class ExceptionHandling {
         }
 
     }
+
+    //Throws exception
+    public static void createNewFileRethrow() throws IOException{
+        File file = new File("resources/nonexistent.txt");
+        file.createNewFile();
+    }
 }
